@@ -7,8 +7,8 @@ import store from './store'
 import './assets/css/reset.css'
 
 // // 引入vant-ui组件
-import { Button } from 'vant'
-Vue.use(Button)
+import { Button, Icon } from 'vant'
+Vue.use(Button).use(Icon)
 
 Vue.config.productionTip = false
 
