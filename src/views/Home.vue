@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     Home页面
-    <mt-button type="primary">default</mt-button>
+    <van-button type="primary">主要按钮</van-button>
   </div>
 </template>
 
@@ -15,4 +15,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+#home{
+  font-size: 0.14rem
+}
 </style>
