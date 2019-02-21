@@ -1,21 +1,41 @@
 <template>
   <div id="home">
-    Home页面
-    <van-button type="primary">主要按钮</van-button>
+    <div class="wrapper">
+      <ul class="content">
+        <header>此处为header</header>
+        <section>此处为轮播图</section>
+        <section>此处为icon合集</section>
+        <section>此处为攻略</section>
+        <footer>此处为footer</footer>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+
 export default {
+  mounted () {
+    // 初始化better-scroll
+    this.$nextTick(() => {
+      document.getElementsByClassName('wrapper')[0].style.height = `${document.documentElement.clientHeight}px`
+      this.scroll = new BScroll('.wrapper', {
+        scrollY: true
+      })
+    })
+  },
   data () {
-    return {
-    }
-  }
+    return {}
+  },
+  methods: {}
 }
 </script>
 
 <style lang='scss' scoped>
-#home{
-  font-size: 0.14rem
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.14rem;
 }
 </style>
