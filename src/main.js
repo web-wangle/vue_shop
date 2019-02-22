@@ -7,8 +7,8 @@ import store from './store'
 import './assets/css/reset.css'
 
 // // 引入vant-ui组件
-import { Button, Icon } from 'vant'
-Vue.use(Button).use(Icon)
+import { Swipe, SwipeItem } from 'vant'
+Vue.use(Swipe).use(SwipeItem)
 
 Vue.config.productionTip = false
 
