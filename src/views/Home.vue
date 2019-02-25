@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div class="wrapper">
+    <div class="wrapper" ref="wrapper">
       <ul class="content">
         <header>
           <router-link to="/" class="head_left">
@@ -9,12 +9,20 @@
           <div class="head_middle">
             <div>
               <input type="text" placeholder="搜索目的地/攻略/游记">
-              <van-icon name="search" size="0.2rem" color="#B5B5B5"/>
+              <img src="../assets/images/home/btn_search.png" alt="" class="search">
             </div>
           </div>
           <router-link to="/sign" class="head_right">登录</router-link>
         </header>
-        <section>此处为轮播图</section>
+        <section id="swiper">
+          <van-swipe :autoplay="3000" indicator-color="white">
+            <van-swipe-item v-for="(item, index) in swiperArray" :key="index">
+              <a :href="item.swiperUrl">
+                <img :src="item.swiperImage" alt="">
+              </a>
+            </van-swipe-item>
+          </van-swipe>
+        </section>
         <section>此处为icon合集</section>
         <section>此处为攻略</section>
         <footer>此处为footer</footer>
@@ -30,20 +38,36 @@ export default {
   mounted () {
     // 初始化better-scroll
     this.$nextTick(() => {
-      document.getElementsByClassName('wrapper')[0].style.height = `${document.documentElement.clientHeight}px`
-      this.scroll = new BScroll('.wrapper', {
-        scrollY: true,
-        click: true,
-        tap: true
-      })
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          scrollY: true,
+          click: true
+        })
+      } else {
+        this.scroll.refresh()
+      }
     })
   },
   data () {
     return {
-      value: ''
+      'swiperArray': [ // 轮播图假数据
+        {
+          swiperUrl: 'http://m.mafengwo.cn/i/11898766.html',
+          swiperImage: 'https://p4-q.mafengwo.net/s13/M00/03/5F/wKgEaVxuiNKADNPmAAT9qaZtbPU89.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+        },
+        {
+          swiperUrl: 'http://m.mafengwo.cn/i/11598414.html',
+          swiperImage: 'https://b4-q.mafengwo.net/s13/M00/34/AC/wKgEaVxtQmeAAysLAATOUOAVOg899.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+        },
+        {
+          swiperUrl: 'http://m.mafengwo.cn/i/11828398.html',
+          swiperImage: 'https://n1-q.mafengwo.net/s13/M00/C9/F4/wKgEaVxsB0uATeQnAARcFCA00Rc14.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+        }
+      ]
     }
   },
-  methods: {}
+  methods: {
+  }
 }
 </script>
 
@@ -100,6 +124,9 @@ header{
         background-color: #f3f3f3;
         line-height: 0.26rem
       }
+      .search{
+        width: 0.16rem;
+      }
     }
   }
   .head_right{
@@ -107,6 +134,14 @@ header{
     height: 0.5rem;
     @include Blockcenter(0.5rem);
     color: #ffa800;
+  }
+}
+#swiper{
+  width: 100%;
+  height: 2.1rem;
+  img{
+    width: 100%;
+    height: 2.1rem;
   }
 }
 </style>
