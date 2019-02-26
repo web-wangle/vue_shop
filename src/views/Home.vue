@@ -31,7 +31,23 @@
             </a>
           </div>
         </section>
-        <section>此处为攻略</section>
+        <section class="strategy">
+          <div class="strategy_head"><span>推荐攻略</span></div>
+          <a href="" v-for="(item, index) in strategyArray" :key="index" :class="'strategy-'+index">
+            <p></p>
+            <div class="strategyMain">
+              <img src="" alt="">
+              <div>
+                <div>文章</div>
+                <div>
+                  <span>浏览量</span>
+                  <span>用户名</span>
+                  <img src="" alt="">
+                </div>
+              </div>
+            </div>
+          </a>
+        </section>
         <footer>此处为footer</footer>
       </ul>
     </div>
@@ -104,6 +120,56 @@ export default {
           navTxt: '当地玩乐',
           navUrl: 'https://m.mafengwo.cn/localdeals/'
         }
+      ],
+      'strategyArray': [ // 推荐攻略假数据
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        },
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        },
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        },
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        },
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        },
+        {
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
+          'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
+          'strategyView': 34717,
+          'authorName': '霸气侧漏',
+          'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
+        }
       ]
     }
   },
@@ -113,25 +179,23 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-// scss定义
-@mixin Flexcenter{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@mixin Blockcenter($line-height){
-  text-align: center;
-  line-height: $line-height
-}
-// 定义结束
+@import '../assets/css/_theme.scss';
+
 .router-link-active{
   text-decoration: none;
   color: black;
 }
+#home{
+  background-color: #F6F6F6;
+}
 .wrapper{
   width: 100%;
+  height: 6.67rem;
   overflow: hidden;
   font-size: 0.14rem;
+  .content{
+    background-color: #ffffff;
+  }
 }
 header{
   display: flex;
@@ -206,7 +270,7 @@ header{
         padding: 0;
         width: 0.46rem;
         height: 0.46rem;
-        background-image: url('../assets/images/home/i_nav3.png');
+        background-image: url('../assets/images/home/icon_collection.png');
         background-size: 1.9rem;
       }
       p{
@@ -264,6 +328,58 @@ header{
       .navIcon{
         background-position: 0.49rem 0.47rem;
       }
+    }
+  }
+}
+.strategy{
+  .strategy_head{
+    width: 100%;
+    height: 0.34rem;
+    background-color: #f8f8f8;
+    @include Blockcenter(0.34rem);
+    span{
+      font-size: 0.15rem;
+      color: #999;
+      &:before{
+        content: "";
+        display: inline-block;
+        width: 0.08rem;
+        height: 0.11rem;
+        background: url('../assets/images/home/strategy_head.png') no-repeat;
+        background-size: 0.1rem;
+        vertical-align: middle;
+        margin-right: 0.17rem;
+      }
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 0.08rem;
+        height: 0.11rem;
+        background: url('../assets/images/home/strategy_head.png') no-repeat;
+        background-size: 0.1rem;
+        vertical-align: middle;
+        margin-left: 0.17rem;
+        background-position: 0 -0.13rem;
+      }
+    }
+  }
+  a{
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #F7F7F7;
+    p{
+      width: 3rem;
+      height: 0.48rem;
+      margin: 0.1rem auto 0 0.15rem;
+      background-color: red;
+    }
+    .strategyMain{
+      width: 100%;
+      height: 1.14rem;
+      box-sizing: border-box;
+      padding: 0.1rem 0.15rem 0.15rem 0.15rem;
+      background-color: yellow;
     }
   }
 }

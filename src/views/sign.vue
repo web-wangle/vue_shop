@@ -17,13 +17,13 @@
                         <input name="username" type="text" placeholder="您的邮箱/手机号">
                     </li>
                     <li>
-                        <input name="password" type="password" placeholder="您的密码">
+                      <input name="password" type="password" placeholder="您的密码">
                     </li>
                 </ul>
                 <span class="forget">忘记密码?</span>
-                <div class="tab_btns">
-                    <button class="btns_yello btns" >登录</button>
-                    <button class="btns_white btns" >注册</button>
+                <div class="tab_btn">
+                    <button class="btns_yello btn" >登录</button>
+                    <button class="btns_white btn" >注册</button>
                 </div>
             </div>
             <div class="tab_on"></div>

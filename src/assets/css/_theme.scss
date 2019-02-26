@@ -1,0 +1,16 @@
+/*
+  scss全局变量定义文件
+  每次定义需写注释并用注释将其分割
+*/
+
+// 定义居中scss代码块
+@mixin Flexcenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin Blockcenter($line-height){
+  text-align: center;
+  line-height: $line-height
+}
+// 定义居中scss代码块结束
