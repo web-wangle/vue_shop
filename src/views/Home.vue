@@ -34,7 +34,7 @@
         <section class="strategy">
           <div class="strategy_head"><span>推荐攻略</span></div>
           <a href="" v-for="(item, index) in strategyArray" :key="index" :class="'strategy-'+index">
-            <p></p>
+            <p class="strategyTitle">{{item.strategyTitle}}</p>
             <div class="strategyMain">
               <img src="" alt="">
               <div>
@@ -181,10 +181,6 @@ export default {
 <style lang='scss' scoped>
 @import '../assets/css/_theme.scss';
 
-.router-link-active{
-  text-decoration: none;
-  color: black;
-}
 #home{
   background-color: #F6F6F6;
 }
@@ -364,6 +360,12 @@ header{
     }
   }
   a{
+    .strategyTitle{
+      font-size: .506rem;
+      color: #111;
+      line-height: 1.4em;
+      max-height: 1.3rem;
+    }
     display: block;
     width: 100%;
     height: auto;
