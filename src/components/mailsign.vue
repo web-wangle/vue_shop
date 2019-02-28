@@ -32,16 +32,8 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+@import '../assets/css/_theme.scss';
 // scss定义
-@mixin Flexcenter{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@mixin Blockcenter($line-height){
-  text-align: center;
-  line-height: $line-height
-}
 $yellow:#ffba33;
 $gray:#dadada;
 // 定义结束
