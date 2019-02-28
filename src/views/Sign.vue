@@ -78,8 +78,8 @@ export default {
 <style lang='scss' scoped>
 @import '../assets/css/_theme.scss';
 // scss定义
-$yellow: #ffba33;
-$gray: #dadada;
+$yellow:#ffba33;
+$gray:#dadada;
 // 定义结束
 .wrapper{
   width: 100%;
@@ -87,7 +87,9 @@ $gray: #dadada;
   font-size: 0.14rem;
 }
 header{
-  @include Flexcenter(100%, 0.7rem);
+  @include Flexcenter;
+  width: 100%;
+  height: 0.7rem;
   img{
     width: 1rem;
     height: 0.3rem;
@@ -97,13 +99,14 @@ header{
   display: block;
   width: 100%;
   .tab_tit{
-    @include Flexcenter(100%, 0.4rem);
+    @include Flexcenter;
     text-align: center;
     margin: 0 0.1rem;
     color: #999;
     background: #fafafa;
+    height: 0.4rem;
     li{
-      @include Blockcenter(50%, 100%, 0.4rem);
+      @include Blockcenter(0.4rem);
       width: 50%;
       font-size: 0.15rem;
       display: inline-block;
@@ -116,15 +119,18 @@ header{
     }
   }
   .tab_content{
-    @include Flexcenter(100%, 100%);
+    @include Flexcenter;
+    width: 100%;
     margin-top: 0.3rem;
   }
 }
 .third_party{
   width: 100%;
   .tip{
-    @include Flexcenter(100%,0.3rem);
-    @include Blockcenter(100%, 100%, 0.3rem);
+    width: 100%;
+    @include Flexcenter;
+    height: 0.3rem;
+    @include Blockcenter(0.3rem);
     font-size: 0.12rem;
     .text{
       color: #CCC;
