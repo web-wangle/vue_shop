@@ -54,7 +54,7 @@ export default {
         {
           navTxt: 'QQ登录',
           navUrl: 'http://passport.mafengwo.cn/qq'
-        },
+        }
       ]
     }
   },
