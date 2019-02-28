@@ -34,9 +34,12 @@
         <section class="strategy">
           <div class="strategy_head"><span>推荐攻略</span></div>
           <a href="" v-for="(item, index) in strategyArray" :key="index" :class="'strategy-'+index">
-            <p class="strategyTitle">{{item.strategyTitle}}</p>
+            <div class="strategyTitle">
+              <vSection class="title" :sectionContent="item.strategyTitle"></vSection>
+              <span v-if="index === 0">蜂首</span>
+            </div>
             <div class="strategyMain">
-              <img src="" alt="">
+              <img :src="item.strategyImage" alt="">
               <div>
                 <div>文章</div>
                 <div>
@@ -56,9 +59,10 @@
 
 <script>
 import BScroll from 'better-scroll'
+import vSection from '@/components/vSection'
 
 export default {
-  mounted () {
+  created () {
     // 初始化better-scroll
     this.$nextTick(() => {
       if (!this.scroll) {
@@ -75,55 +79,55 @@ export default {
     return {
       'swiperArray': [ // 轮播图假数据
         {
-          swiperUrl: 'http://m.mafengwo.cn/i/11898766.html',
-          swiperImage: 'https://p4-q.mafengwo.net/s13/M00/03/5F/wKgEaVxuiNKADNPmAAT9qaZtbPU89.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+          'swiperUrl': 'http://m.mafengwo.cn/i/11898766.html',
+          'swiperImage': 'https://p4-q.mafengwo.net/s13/M00/03/5F/wKgEaVxuiNKADNPmAAT9qaZtbPU89.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
         },
         {
-          swiperUrl: 'http://m.mafengwo.cn/i/11598414.html',
-          swiperImage: 'https://b4-q.mafengwo.net/s13/M00/34/AC/wKgEaVxtQmeAAysLAATOUOAVOg899.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+          'swiperUrl': 'http://m.mafengwo.cn/i/11598414.html',
+          'swiperImage': 'https://b4-q.mafengwo.net/s13/M00/34/AC/wKgEaVxtQmeAAysLAATOUOAVOg899.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
         },
         {
-          swiperUrl: 'http://m.mafengwo.cn/i/11828398.html',
-          swiperImage: 'https://n1-q.mafengwo.net/s13/M00/C9/F4/wKgEaVxsB0uATeQnAARcFCA00Rc14.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
+          'swiperUrl': 'http://m.mafengwo.cn/i/11828398.html',
+          'swiperImage': 'https://n1-q.mafengwo.net/s13/M00/C9/F4/wKgEaVxsB0uATeQnAARcFCA00Rc14.jpeg?imageMogr2%2Fthumbnail%2F%21750x422r%2Fgravity%2FCenter%2Fcrop%2F%21750x422%2Fquality%2F90'
         }
       ],
       'navArray': [
         {
-          navTxt: '找攻略',
-          navUrl: 'https://m.mafengwo.cn/mdd/'
+          'navTxt': '找攻略',
+          'navUrl': 'https://m.mafengwo.cn/mdd/'
         },
         {
-          navTxt: '看游记',
-          navUrl: 'https://m.mafengwo.cn/note/'
+          'navTxt': '看游记',
+          'navUrl': 'https://m.mafengwo.cn/note/'
         },
         {
-          navTxt: '问达人',
-          navUrl: 'https://m.mafengwo.cn/wenda/'
+          'navTxt': '问达人',
+          'navUrl': 'https://m.mafengwo.cn/wenda/'
         },
         {
-          navTxt: '结伴',
-          navUrl: 'https://m.mafengwo.cn/together/'
+          'navTxt': '结伴',
+          'navUrl': 'https://m.mafengwo.cn/together/'
         },
         {
-          navTxt: '酒店',
-          navUrl: 'https://m.mafengwo.cn/hotel/#/home'
+          'navTxt': '酒店',
+          'navUrl': 'https://m.mafengwo.cn/hotel/#/home'
         },
         {
-          navTxt: '旅行商城',
-          navUrl: 'https://m.mafengwo.cn/sales/'
+          'navTxt': '旅行商城',
+          'navUrl': 'https://m.mafengwo.cn/sales/'
         },
         {
-          navTxt: '机票',
-          navUrl: 'https://m.mafengwo.cn/flight/'
+          'navTxt': '机票',
+          'navUrl': 'https://m.mafengwo.cn/flight/'
         },
         {
-          navTxt: '当地玩乐',
-          navUrl: 'https://m.mafengwo.cn/localdeals/'
+          'navTxt': '当地玩乐',
+          'navUrl': 'https://m.mafengwo.cn/localdeals/'
         }
       ],
       'strategyArray': [ // 推荐攻略假数据
         {
-          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天，就是这么厉害啊，哈哈啊哈就是这个味道',
           'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
           'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
           'strategyView': 34717,
@@ -131,7 +135,7 @@ export default {
           'authorAvatar': 'https://p1-q.mafengwo.net/s9/M00/CF/ED/wKgBs1fZJgWAGNsZAADAw9Ag4bI60.jpeg?imageMogr2%2Fthumbnail%2F%2148x48r%2Fgravity%2FCenter%2Fcrop%2F%2148x48%2Fquality%2F90'
         },
         {
-          'strategyTitle': '打破昆明刻板印象，春节我在春城过春天',
+          'strategyTitle': '打破昆明刻板印象',
           'strategyImage': 'https://b2-q.mafengwo.net/s13/M00/97/21/wKgEaVxzzuiAGmdAAAL-q5Is_iw00.jpeg?imageMogr2%2Fthumbnail%2F%21288x218r%2Fgravity%2FCenter%2Fcrop%2F%21288x218%2Fquality%2F90',
           'strategySummary': '老生常谈，上有天堂，下有苏杭。 游 杭州 ，有人说西湖十景是必游的。但随着人们眼界的不断拓宽，生活品质的不断提升。西湖十景也出现了不同时期的不同标准。 早期： 平湖 秋月，苏堤春晓，断桥残雪，雷锋夕照， 南屏 晚钟，曲院风荷，花港观鱼，柳岸闻莺，三潭映月，两峰插云。 中期：云栖竹径，满陇桂雨，虎跑梦泉， 龙井 问茶，九溪烟树，吴山天风，阮墩环碧， 黄龙 吐翠，玉皇飞云，宝石流霞。 近期：北街梦寻，万松书缘，湖滨晴雨，钱祠表忠，岳墓 栖霞 ，杨堤景行，梅坞春早，三台云水，灵隐禅踪，六和听涛。 旧十景，西湖的环湖大',
           'strategyView': 34717,
@@ -173,6 +177,9 @@ export default {
       ]
     }
   },
+  components: {
+    vSection: vSection
+  },
   methods: {
   }
 }
@@ -197,9 +204,7 @@ header{
   display: flex;
   width: 100%;
   .head_left{
-    @include Flexcenter;
-    width: 1.05rem;
-    height: 0.5rem;
+    @include Flexcenter(1.05rem, 0.5rem);
     img{
       width: 0.94rem;
       height: 0.25rem;
@@ -207,14 +212,12 @@ header{
     }
   }
   .head_middle{
-    @include Flexcenter;
+    @include Flexcenter(100%, 100%);
     flex: 1;
     height: 0.5rem;
     padding-right: 0.1rem;
     div{
-      @include Flexcenter;
-      width: 100%;
-      height: 0.26rem;
+      @include Flexcenter(100%, 0.26rem);
       background-color: #f3f3f3;
       border-radius: 0.346rem;
       padding-left: 0.12rem;
@@ -231,9 +234,7 @@ header{
     }
   }
   .head_right{
-    width: 0.4rem;
-    height: 0.5rem;
-    @include Blockcenter(0.5rem);
+    @include Blockcenter(0.4rem, 0.5rem, 0.5rem);
     color: #ffa800;
   }
 }
@@ -329,10 +330,8 @@ header{
 }
 .strategy{
   .strategy_head{
-    width: 100%;
-    height: 0.34rem;
+    @include Blockcenter(100%, 0.34rem, 0.34rem);
     background-color: #f8f8f8;
-    @include Blockcenter(0.34rem);
     span{
       font-size: 0.15rem;
       color: #999;
@@ -360,28 +359,40 @@ header{
     }
   }
   a{
-    .strategyTitle{
-      font-size: .506rem;
-      color: #111;
-      line-height: 1.4em;
-      max-height: 1.3rem;
-    }
     display: block;
     width: 100%;
     height: auto;
     border-bottom: 1px solid #F7F7F7;
-    p{
-      width: 3rem;
-      height: 0.48rem;
-      margin: 0.1rem auto 0 0.15rem;
-      background-color: red;
+    .strategyTitle{
+      position: relative;
+      padding-top: 0.1rem;
+      padding-left: 0.15rem;
+      padding-right: 0.57rem;
+      color: #111;
+      .title{
+        @include ellipsis(3.03rem, 0.5rem, 0.25rem, 0.19rem);
+      }
+      span{
+        @include Blockcenter(0.4rem, 0.21rem, 0.21rem);
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0.14rem;
+        background-color: #F5BE00;
+        color: #ffffff;
+        font-size: 0.13rem;
+      }
     }
     .strategyMain{
+      display: flex;
       width: 100%;
       height: 1.14rem;
       box-sizing: border-box;
       padding: 0.1rem 0.15rem 0.15rem 0.15rem;
-      background-color: yellow;
+      img{
+        width: 1.3rem;
+        height: 0.9rem;
+      }
     }
   }
 }
