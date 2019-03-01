@@ -9,7 +9,7 @@
         </header>
         <section class="tab">
           <ul class="tab_tit">
-            <li v-for="(tab,index) in tabs" :class="{active:curtab==index}" @click="toggletab(index)" v-html="tab.title"></li>
+            <li v-for="(tab,index) in tabs" :class="{active:curtab==index}" @click="toggletab(index)" :key="index">{{tab.title}}</li>
           </ul>
           <div class="tab_content">
             <normal-Sign v-show="isNormal" ></normal-Sign>
