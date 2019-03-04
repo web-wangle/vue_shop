@@ -9,13 +9,43 @@
         </header>
         <section class="tab">
           <ul class="tab_tit">
-            <li v-for="(tab,index) in tabs" :class="{active:curtab==index}" @click="toggletab(index)" v-html="tab.title"></li>
+            <li v-for="(tab,index) in tabs" :class="{active:curtab==index}" @click="toggletab(index)" :key="index">{{tab.title}}</li>
           </ul>
           <div class="tab_content">
-            <normal-Sign v-show="isNormal" ></normal-Sign>
-            <mail-Sign v-show="!isNormal" ></mail-Sign>
+            <div class="normal" v-show="isNormal">
+              <ul class="forms">
+                <li class="bpttom_gray_line">
+                  <input name="username" type="text" placeholder="您的邮箱">
+                </li>
+                <li>
+                  <input name="password" type="password" placeholder="您的密码">
+                </li>
+              </ul>
+            </div>
+            <div class="mail" v-show="!isNormal">
+              <ul class="forms">
+                <li class="bpttom_gray_line">
+                  <input class="width90" name="username" type="text" placeholder="您的邮箱">
+                </li>
+                <li class="bpttom_gray_line">
+                  <input class="short_width" name="Verification" type="text" placeholder="验证码">
+                  <img class="code_img fr" src="../assets/images/sign/code.jpg" alt="验证码">
+                </li>
+                <li>
+                  <input class="short_width" name="mailcode" type="text" placeholder="邮箱验证码">
+                  <button class="code_btn fr">免费获取验证码</button>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
+        <div class="sign_btn">
+          <span class="forget">忘记密码?</span>
+          <div class="tab_btns">
+            <button class="btns_yello btns">登录</button>
+            <button class="btns_white btns">注册</button>
+          </div>
+        </div>
         <section class="third_party">
           <div class="tip">
             <span class="line"></span>
@@ -37,9 +67,6 @@
 </template>
 
 <script>
-import normalSign from '../components/normalsign'
-import mailSign from '../components/mailsign'
-
 export default {
   data () {
     return {
@@ -57,10 +84,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    normalSign,
-    mailSign
   },
   methods: {
     toggletab: function (index) {
@@ -81,25 +104,41 @@ export default {
 $yellow: #ffba33;
 $gray: #dadada;
 // 定义结束
+.bpttom_gray_line{
+  border-bottom: 1px solid $gray;
+}
+.fr{
+  float: right;
+}
 .wrapper{
+  display: block;
   width: 100%;
   overflow: hidden;
   font-size: 0.14rem;
 }
 header{
-  @include Flexcenter(100%, 0.7rem);
-  img{
+  display: block;
+  height: 0.7rem;
+  width: 100%;
+  line-height: 0.85rem;
+  a{
+    display: block;
+    margin: 0 auto;
     width: 1rem;
     height: 0.3rem;
+    img{
+      width: 1rem;
+      height: 0.3rem;
+    }
   }
 }
 .tab{
   display: block;
   width: 100%;
   .tab_tit{
-    @include Flexcenter(100%, 0.4rem);
+    @include Flexcenter(95%, 0.4rem);
     text-align: center;
-    margin: 0 0.1rem;
+    margin: 0 2.5%;
     color: #999;
     background: #fafafa;
     li{
@@ -116,19 +155,96 @@ header{
     }
   }
   .tab_content{
-    @include Flexcenter(100%, 100%);
+    display: block;
+    width: 100%;
     margin-top: 0.3rem;
+    .forms{
+      margin: 0.05rem 2.5%;
+      width: 95%;
+      border: 1px solid $gray;
+      border-radius: 2.5px;
+      li{
+        font-family:Arial,Helvetica,"迷你简准圆",sans-serif;
+        font-size: 0.16rem;
+        width: 100%;
+        input{
+          width: 90%;
+          height: 0.43rem;
+          font-size: 0.16rem;
+          line-height: 1rem;
+          padding: 0 0.11rem;
+          ::-webkit-input-placeholder { /* WebKit browsers */
+            color: #dadada;
+          }
+          ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #dadada;
+          }
+        }
+        .short_width{
+          width: 50%;
+        }
+        .code_img{
+          vertical-align:middle;
+          height: 0.4rem;
+          width: 1.2rem;
+        }
+        .code_btn{
+          width: 1.1rem;
+          height: 0.33rem;
+          border-radius: 0.05rem;
+          background: #ff8a00;
+          color: white;
+          font-size: 0.12rem;
+          margin: 0.05rem 0.1rem;
+        }
+      }
+    }
+  }
+}
+.sign_btn{
+  display: block;
+  width: 100%;
+  .forget{
+    font-size: 0.12rem;
+    color: #999;
+    float: right;
+    margin-right: 0.1rem;
+    padding-top: 0.03rem;
+    margin-bottom: 0.15rem;
+  }
+  .tab_btns{
+    display: block;
+    width: 100%;
+    .btns{
+      font-size: 0.18rem;
+      width: 95%;
+      height: 0.35rem;
+      border-radius: 0.05rem;
+      margin: 0.05rem 2.5%;
+    }
+    .btns_yello{
+      background: $yellow;
+      color: white;
+      border: 1px solid #d8b165;
+    }
+    .btns_white{
+      background: white;
+      color: $yellow;
+      border: 1px solid $yellow;
+    }
   }
 }
 .third_party{
+  display: block;
   width: 100%;
+  margin-top: 0.2rem;
   .tip{
     @include Flexcenter(100%,0.3rem);
     @include Blockcenter(100%, 100%, 0.3rem);
     font-size: 0.12rem;
     .text{
       color: #CCC;
-      padding: 0 0.05rem;
+      padding: 0 1%;
       width: 30%;
     }
     .line {
