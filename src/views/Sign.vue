@@ -29,11 +29,11 @@
                 </li>
                 <li class="bpttom_gray_line">
                   <input class="short_width" name="Verification" type="text" placeholder="验证码">
-                  <img class="code_img fr" src="../assets/images/sign/code.jpg" alt="验证码">
+                  <img class="code_img" src="../assets/images/sign/code.jpg" alt="验证码">
                 </li>
                 <li>
                   <input class="short_width" name="mailcode" type="text" placeholder="邮箱验证码">
-                  <button class="code_btn fr">免费获取验证码</button>
+                  <button class="code_btn">免费获取验证码</button>
                 </li>
               </ul>
             </div>
@@ -164,31 +164,40 @@ header{
       border: 1px solid $gray;
       border-radius: 2.5px;
       li{
+        position: relative;
         font-family:Arial,Helvetica,"迷你简准圆",sans-serif;
         font-size: 0.16rem;
         width: 100%;
         input{
-          width: 90%;
+          width: 94%;
           height: 0.43rem;
           font-size: 0.16rem;
           line-height: 1rem;
-          padding: 0 0.11rem;
-          ::-webkit-input-placeholder { /* WebKit browsers */
-            color: #dadada;
-          }
-          ::-moz-placeholder { /* Mozilla Firefox 19+ */
-            color: #dadada;
-          }
+          padding: 0 0.1rem;
+          box-sizing: content-box;
+          border: 1px solid #ffffff;
         }
-        .short_width{
-          width: 50%;
+        input::-webkit-input-placeholder {
+          color: $gray;
+          font-size: 0.16rem;
+        }
+        input:focus{
+          height: 0.43rem;
+          width: 94%;
+          border:1px solid $yellow;
         }
         .code_img{
+          position: absolute;
+          right: 0.05rem;
+          top: 0.02rem;
           vertical-align:middle;
           height: 0.4rem;
           width: 1.2rem;
         }
         .code_btn{
+          position: absolute;
+          right: 0;
+          top: 0;
           width: 1.1rem;
           height: 0.33rem;
           border-radius: 0.05rem;
