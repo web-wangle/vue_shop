@@ -40,12 +40,14 @@
             </div>
             <div class="strategyMain">
               <img :src="item.strategyImage" alt="">
-              <div>
-                <div>文章</div>
+              <div class="strategyRigth">
+                <div class="strategySummary">{{item.strategySummary}}</div>
                 <div>
-                  <span>浏览量</span>
-                  <span>用户名</span>
-                  <img src="" alt="">
+                  <div>{{item.strategyView}}浏览</div>
+                  <div>
+                    <span>{{item.authorName}}</span>
+                    <img :src="item.authorAvatar" alt="">
+                  </div>
                 </div>
               </div>
             </div>
@@ -370,7 +372,7 @@ header{
       padding-right: 0.57rem;
       color: #111;
       .title{
-        @include ellipsis(3.03rem, 0.5rem, 0.25rem, 0.19rem);
+        @include ellipsis(3.03rem, 0.5rem, 0.25rem, 0.19rem, 2);
       }
       span{
         @include Blockcenter(0.4rem, 0.21rem, 0.21rem);
@@ -386,12 +388,38 @@ header{
     .strategyMain{
       display: flex;
       width: 100%;
-      height: 1.14rem;
+      height: 1.15rem;
       box-sizing: border-box;
       padding: 0.1rem 0.15rem 0.15rem 0.15rem;
       img{
         width: 1.3rem;
         height: 0.9rem;
+        margin-right: 0.15rem;
+      }
+    }
+    .strategyRigth{
+      width: 2rem;
+      height: 0.9rem;
+      color: #999;
+      .strategySummary{
+        margin-top: 0.05rem;
+        @include ellipsis(2rem, 0.53rem, 0.18rem, 0.14rem, 3);
+      }
+      .strategySummary + div{
+        position: relative;
+        top: 0.12rem;
+        @include Flexcenter(100%, 0.2rem);
+        justify-content: space-between;
+        font-size: 0.12rem;
+        img{
+          width: 0.2rem;
+          height: 0.2rem;
+          border-radius: 50%;
+          margin: 0 0 0 0.05rem;
+        }
+        :last-child{
+          @include Flexcenter(auto, 0.2rem);
+        }
       }
     }
   }
