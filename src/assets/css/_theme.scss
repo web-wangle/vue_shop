@@ -1,0 +1,32 @@
+/*
+ * scss全局变量定义文件
+ * 每次定义需写注释并用注释将其分割
+ */
+
+// 定义居中scss代码块
+@mixin Flexcenter($width, $height){
+  width: $width;
+  height: $height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin Blockcenter($width, $height, $line-height){
+  width: $width;
+  height: $height;
+  text-align: center;
+  line-height: $line-height
+}
+// 定义居中scss代码块结束
+
+// 定义超出自动省略号代码块
+@mixin ellipsis($width, $height, $line-height, $fontSize, $clamp) {
+  width: $width;
+  max-height: $height;
+  line-height: $line-height;
+  font-size: $fontSize;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+  overflow: hidden;
+}
