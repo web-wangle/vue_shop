@@ -94,7 +94,7 @@ export default {
       'navArray': [
         {
           'navTxt': '找攻略',
-          'navUrl': 'https://m.mafengwo.cn/mdd/'
+          'navUrl': '/LookingForGuide'
         },
         {
           'navTxt': '看游记',

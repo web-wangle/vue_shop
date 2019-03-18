@@ -1,26 +1,33 @@
 <template>
   <div class="wrapper">
-    <Header></Header>
-    <section>
-      这是找攻略页面
+    <commentHeader></commentHeader>
+    <section class="seach">
+      搜索框
+    </section>
+    <section class="top_news">
+        图片文章
     </section>
   </div>
 </template>
 
 <script>
-import Header from '../components/header'
+import commentHeader from '../components/header'
 
 export default {
   data () {
     return {}
   },
   components: {
-    Header
+    commentHeader
   }
 }
 </script>
 <style lang='scss' scoped>
 @import '../assets/css/_theme.scss';
-
-
+.wrapper{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.14rem;
+}
 </style>

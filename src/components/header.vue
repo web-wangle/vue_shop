@@ -4,20 +4,17 @@
       <router-link to="/" class="head_left">
         <img src="../assets/images/home/home_log.png" alt="logo">
       </router-link>
-      <div class="head_middle">
-        <div>
-          <input type="text" placeholder="搜索目的地/攻略/游记">
-          <img src="../assets/images/home/btn_search.png" alt="" class="search">
-        </div>
+      <div class="head_right">
+        <router-link to="/" class="right_text">官网首页</router-link>
+        <router-link to="/" class="right_img"></router-link>
       </div>
-      <router-link to="/sign" class="head_right">登录</router-link>
     </header>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'mailsign',
+  name: 'header',
   data () {
     return {}
   }
@@ -26,49 +23,51 @@ export default {
 <style lang='scss' scoped>
 @import '../assets/css/_theme.scss';
 .wrapper{
+  display: block;
+  position: relative;
   width: 100%;
-  height: 6.67rem;
   overflow: hidden;
   font-size: 0.14rem;
-  .content{
-    background-color: #ffffff;
-  }
 }
 header{
   display: flex;
   width: 100%;
+  height: 0.5rem;
+  font-size: 0.15rem;
+  font-family: 'PingFangSC-Light',Arial,Helvetica,sans-serif,"Hiragino Sans GB";
+  border-bottom: 1px solid #dadada;
   .head_left{
-    @include Flexcenter(1.05rem, 0.5rem);
+    @include Flexcenter(1.2rem, 0.5rem);
+    padding-left: 0.05rem;
     img{
-      width: 0.94rem;
-      height: 0.25rem;
+      width: 1.2rem;
+      height: 0.33rem;
       transform: scale(0.85);
     }
   }
-  .head_middle{
-    @include Flexcenter(1, 0.5rem);
-    height: 0.5rem;
-    padding-right: 0.1rem;
-    div{
-      @include Flexcenter(100%, 0.26rem);
-      background-color: #f3f3f3;
-      border-radius: 0.346rem;
-      padding-left: 0.12rem;
-      input{
-        width: 1.74rem;
-        height: 0.26rem;
-        font-size: 0.12rem;
-        background-color: #f3f3f3;
-        line-height: 0.26rem
-      }
-      .search{
-        width: 0.16rem;
-      }
-    }
-  }
   .head_right{
-    @include Blockcenter(0.4rem, 0.5rem, 0.5rem);
-    color: #ffa800;
+    display: flex;
+    height: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .right_text{
+      color: #ffa800;
+      padding: 0 0.15rem;
+      border-right: 1px solid #dadada;
+    }
+    .right_img{
+      width: 0.5rem;
+      height: 0.5rem;
+      margin: 0 auto 0.08rem auto;
+      padding: 0;
+      background-image: url('../assets/images/comment/head.png');
+      background-size: 1rem 3rem;
+      background-position: 0 -0.45rem;
+    }
   }
 }
 </style>
